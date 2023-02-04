@@ -90,7 +90,7 @@ input{
   font-size: 36px;
   line-height: 30px;
   margin: 0;
-  color: rgb(177, 44, 44);
+  color: white;
 }
 table{
   border-collapse: collapse;
@@ -136,4 +136,12 @@ aside > p{
   width: 30%;
   background-color: rgb(177, 44, 44);
   color: white;
+}
+#buttonList{
+  height: 40px;
+  width: 90%;
+  background-color: rgb(177, 44, 44);
+  color: white;
+  /* border: none; */
+  border-radius: 10px;
 }

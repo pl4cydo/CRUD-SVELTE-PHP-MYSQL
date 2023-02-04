@@ -27,7 +27,7 @@ export const login = async (username, pw) => {
 
 async function loadProducts(user_id) {
     // console.log('deve carregar os produtos do usuário ' + user_id)
-    const response = await fetch('http://localhost:8001/get-products.php?login_id=' + user_id, {
+    const response = await fetch('http://localhost:8001/listarAutomoveis.php?login_id=' + user_id, {
         method: 'get'
     });
     const data = await response.json();
@@ -48,5 +48,12 @@ export function addProduct(modelo, ano, cor, placa, login_id) {
         body: formData
     });
 
-    // loadProducts(login_id)
+    loadProducts(login_id)
+}
+
+export async function removeProduct(id, login_id) {
+    await fetch('http://localhost:8001/deletarAutomovel.php?id=' + id, {
+        method: 'get'
+    });
+    loadProducts(login_id)
 }
