@@ -59,6 +59,18 @@ export function addProduct(modelo, ano, cor, placa, login_id) {
     loadProducts(login_id)
 }
 
+export function addUsuario(nome, senha, email){
+    const formData = new FormData();
+    formData.append('nome', nome);
+    formData.append('senha', senha);
+    formData.append('email', email);
+
+    fetch('http://localhost:8001/addUsuario.php',{
+        method: 'post',
+        body: formData
+    })
+}
+
 export async function removeProduct(id, login_id) {
     await fetch('http://localhost:8001/deletarAutomovel.php?id=' + id, {
         method: 'get'

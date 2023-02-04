@@ -5,6 +5,7 @@
   import Alterar from "./tools/Alterar.svelte";
 
   import { state,  stateBloco, loginA } from "./Stores";
+  import CadastroUsuario from "./tools/CadastroUsuario.svelte";
 
   function alterarBLoco(){
     $stateBloco.bl = 'alterar'
@@ -17,6 +18,8 @@
     $stateBloco.hed = 'cadastro'
     $stateBloco.but = 'cadastro'
   }
+
+
 </script>
 
 <main>
@@ -37,13 +40,16 @@
         <a href="#"><li>GitHub</li></a>
         <a href="#"><li>Linkedin</li></a>
         {#if !$loginA}
-            <li id="cadastro">Cadastro</li>
+            <!-- svelte-ignore a11y-click-events-have-key-events -->
+            <li on:click={() => {$state = 'cadastroUsuario'}} id="cadastro">Cadastro</li>
         {/if}
       </ul>
     </header>
 
     {#if $state === 'login'}
       <Login />
+    {:else if $state === 'cadastroUsuario'}
+      <CadastroUsuario />
     {:else if $state === 'crud'}
     <div id="bloco">
         {#if $stateBloco.bl === 'cadastro'}
