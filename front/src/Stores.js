@@ -1,6 +1,11 @@
 import { writable } from "svelte/store";
 
 export const state = writable('login')
+export const stateBloco = writable({
+    bl: 'cadastro',
+    hed: 'cadastro',
+    but: 'cadastro'
+})
 
 export const users = writable([]);
 export const currentUser = writable(null);

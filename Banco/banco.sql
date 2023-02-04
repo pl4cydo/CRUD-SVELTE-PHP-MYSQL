@@ -11,6 +11,7 @@ create table login(
 show tables;
 describe login;
 insert into login(nome, email, senha) value("root", "root@root.com", "root");
+insert into login(nome, email, senha) value("placydo", "placydo@root.com", "placydo");
 select * from login;
 
 CREATE TABLE `automoveis` (

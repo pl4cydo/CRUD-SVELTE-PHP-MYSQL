@@ -1,10 +1,15 @@
 <script>
-  import { automoveis, removeProduct, currentUser } from "../Stores";
+  import { automoveis, removeProduct, currentUser, stateBloco } from "../Stores";
 
 
   function remove(id) {
     removeProduct(id, $currentUser.id)
   }
+
+  function alterar(id){
+    console.log(id)
+  }
+
 </script>
 
 <div id="Lista">
@@ -26,7 +31,11 @@
             <td><h4>{el.ano}</h4></td>
             <td><h4>{el.cor}</h4></td>
             <td><h4>{el.placa}</h4></td>
-            <th><button id="buttonList" on:click|preventDefault={() => remove(el.id)}>remover</button></th>
+            {#if $stateBloco.but === 'cadastro'}
+              <th><button id="buttonList" on:click|preventDefault={() => remove(el.id)}>remover</button></th>
+            {:else if $stateBloco.but === 'alterar'}  
+            <th><button id="buttonList" on:click|preventDefault={() => alterar(el.id)}>Alterar</button></th>
+            {/if}
           </tr>
         {/each}
       </tbody>
