@@ -1,0 +1,147 @@
+
+body{
+  background-color: rgb(34, 34, 34);
+  color: white;
+  margin: 0;
+}
+main{
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 15px;
+}
+header{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+#title{
+  flex-direction: column;
+  line-height: 10px;
+}
+/* #title > h1{
+  font-weight: 200;
+} */
+li{
+  display: inline-block;
+  margin: 20px;
+}
+#cadastro{
+  border: 2px solid rgb(177, 44, 44);
+  padding: 10px;
+  border-radius: 20px;
+}
+#cadastro:hover{
+  border: 2px solid rgb(177, 44, 44);
+  background: rgb(177, 44, 44);
+  transition: 0.3s;
+}
+a{
+  color: white;
+}
+a:hover{
+  color: rgb(177, 44, 44);
+  transition: 0.3s all;
+}
+#bloco{
+  display: flex;
+  flex-direction: row;
+  margin-top: 50px;
+  /* align-items: center; */
+  justify-content: center;
+}
+aside{
+  /* border: 1px solid white; */
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15)
+}
+#h2Color{
+  color: rgb(177, 44, 44);
+}
+form{
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+}
+#button{
+  height: 50px;
+  width: 50%;
+  background-color: rgb(177, 44, 44);
+  color: white;
+}
+input{
+  margin-top: 20px;
+  height: 20px;
+  padding: 15px;
+  border-radius: 10px;
+  border: none;
+  font-size: 15px;
+}
+#Lista{
+  /* border: 1px solid white; */
+  width: 500px;
+  margin: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15)
+}
+#Lista > h2{
+  font-size: 36px;
+  line-height: 30px;
+  margin: 0;
+  color: rgb(177, 44, 44);
+}
+table{
+  border-collapse: collapse;
+  margin: 25px 0;
+  font-size: 0.9em;
+  min-width: 400px;
+  border-radius: 5px 5px 0 0;
+  overflow: hidden;
+}
+thead tr {
+  background-color: rgb(177, 44, 44) ;
+  color: #ffffff;
+  text-align: left;
+  font-weight: bold;
+}
+th,
+td {
+    padding: 12px 15px;
+}
+
+/* tbody tr {
+    border-bottom: 1px solid #dddddd;
+} */
+
+/* tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+} */
+
+tbody tr:last-of-type {
+    border-bottom: 2px solid rgb(177, 44, 44);
+}
+
+tbody tr.active-row {
+    font-weight: bold;
+    color: #009879;
+}
+aside > h2{
+  font-size: 36px;
+  line-height: 30px;
+  margin: 0;
+}
+aside > p{
+  line-height: 20px;
+  max-width: 500px;
+}
+#loginInput{
+  width: 30%;
+}
+#loginButton{
+  height: 50px;
+  width: 30%;
+  background-color: rgb(177, 44, 44);
+  color: white;
+}
