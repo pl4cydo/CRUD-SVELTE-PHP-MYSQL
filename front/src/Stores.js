@@ -7,6 +7,9 @@ export const stateBloco = writable({
     but: 'cadastro'
 })
 
+export const IdAlterar = writable(null)
+
+export const loginA = writable(false)
 export const users = writable([]);
 export const currentUser = writable(null);
 export const automoveis = writable([]);
@@ -62,3 +65,8 @@ export async function removeProduct(id, login_id) {
     });
     loadProducts(login_id)
 }
+
+
+  
+
+ 

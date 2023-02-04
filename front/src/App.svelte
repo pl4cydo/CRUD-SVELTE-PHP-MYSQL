@@ -4,7 +4,7 @@
   import Login from "./tools/Login.svelte";
   import Alterar from "./tools/Alterar.svelte";
 
-  import { state,  stateBloco } from "./Stores";
+  import { state,  stateBloco, loginA } from "./Stores";
 
   function alterarBLoco(){
     $stateBloco.bl = 'alterar'
@@ -27,14 +27,18 @@
       </div>
       <ul>
         <!-- svelte-ignore a11y-click-events-have-key-events -->
-        {#if $stateBloco.hed === 'cadastro'}
-          <li  on:click={() => alterarBLoco()}>Aterar Automovel</li>
-        {:else if $stateBloco.hed === 'alterar'}
-          <li on:click={() => alterarBLoco2()}>Cadastrar Automovel</li>
+        {#if $loginA}
+            {#if $stateBloco.hed === 'cadastro'}
+            <li  on:click={() => alterarBLoco()}>Aterar Automovel</li>
+            {:else if $stateBloco.hed === 'alterar'}
+              <li on:click={() => alterarBLoco2()}>Cadastrar Automovel</li>
+            {/if}
         {/if}
         <a href="#"><li>GitHub</li></a>
         <a href="#"><li>Linkedin</li></a>
-        <li id="cadastro">Cadastro</li>
+        {#if !$loginA}
+            <li id="cadastro">Cadastro</li>
+        {/if}
       </ul>
     </header>
 

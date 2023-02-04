@@ -1,5 +1,5 @@
 <script>
-  import { automoveis, removeProduct, currentUser, stateBloco } from "../Stores";
+  import { automoveis, removeProduct, currentUser, stateBloco, IdAlterar } from "../Stores";
 
 
   function remove(id) {
@@ -7,7 +7,7 @@
   }
 
   function alterar(id){
-    console.log(id)
+    $IdAlterar = id
   }
 
 </script>

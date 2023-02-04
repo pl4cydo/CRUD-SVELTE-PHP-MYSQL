@@ -1,5 +1,5 @@
 <script>
-    import { state, currentUser, login } from "../Stores";
+    import { state, currentUser, login, loginA } from "../Stores";
 
     const form = {
         username: "",
@@ -10,6 +10,7 @@
         await login(form.username, form.pw);
         if ($currentUser) {
             $state = 'crud';
+            $loginA = true;
         }
     };
 
