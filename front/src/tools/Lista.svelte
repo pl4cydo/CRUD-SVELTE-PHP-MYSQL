@@ -1,3 +1,7 @@
+<script>
+  import { automoveis } from "../Stores";
+</script>
+
 <div id="Lista">
     <h2>Lista de Automoveis</h2>
     <table>
@@ -10,47 +14,14 @@
         </tr>
       </thead>
       <tbody>
+        {#each $automoveis as el}
+          <td><h4>{el.Modelo}</h4></td>
+          <td><h4>{el.ano}</h4></td>
+          <td><h4>{el.cor}</h4></td>
+          <td><h4>{el.placa}</h4></td>
+        {/each}
         <tr>
-          <td><h4>Compass</h4></td>
-          <td><h4>2023</h4></td>
-          <td><h4>Cinza</h4></td>
-          <td><h4>BR-32324</h4></td>
-        </tr>
-        <tr>
-          <td><h4>Compass</h4></td>
-          <td><h4>2023</h4></td>
-          <td><h4>Cinza</h4></td>
-          <td><h4>BR-32324</h4></td>
-        </tr>
-        <tr>
-          <td><h4>Compass</h4></td>
-          <td><h4>2023</h4></td>
-          <td><h4>Cinza</h4></td>
-          <td><h4>BR-32324</h4></td>
-        </tr>
-        <tr>
-          <td><h4>Compass</h4></td>
-          <td><h4>2023</h4></td>
-          <td><h4>Cinza</h4></td>
-          <td><h4>BR-32324</h4></td>
-        </tr>
-        <tr>
-          <td><h4>Compass</h4></td>
-          <td><h4>2023</h4></td>
-          <td><h4>Cinza</h4></td>
-          <td><h4>BR-32324</h4></td>
-        </tr>
-        <tr>
-          <td><h4>Compass</h4></td>
-          <td><h4>2023</h4></td>
-          <td><h4>Cinza</h4></td>
-          <td><h4>BR-32324</h4></td>
-        </tr>
-        <tr>
-          <td><h4>Compass</h4></td>
-          <td><h4>2023</h4></td>
-          <td><h4>Cinza</h4></td>
-          <td><h4>BR-32324</h4></td>
+          
         </tr>
       </tbody>
       

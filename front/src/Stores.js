@@ -4,6 +4,7 @@ export const state = writable('login')
 
 export const users = writable([]);
 export const currentUser = writable(null);
+export const automoveis = writable([]);
 // export const products = writable([]);
 
 
@@ -21,5 +22,31 @@ export const login = async (username, pw) => {
     }
     const data = await response.json();
     currentUser.set(data);
-    // loadProducts(data.id)
+    loadProducts(data.id)
+}
+
+async function loadProducts(user_id) {
+    // console.log('deve carregar os produtos do usuário ' + user_id)
+    const response = await fetch('http://localhost:8001/get-products.php?login_id=' + user_id, {
+        method: 'get'
+    });
+    const data = await response.json();
+    automoveis.set(data);
+}
+
+export function addProduct(modelo, ano, cor, placa, login_id) {
+    const formData = new FormData();
+    formData.append('modelo', modelo);
+    formData.append('ano', ano);
+    formData.append('cor', cor);
+    formData.append('placa', placa);
+    formData.append('login_id', login_id);
+    
+
+    fetch('http://localhost:8001/addAutomovel.php', {
+        method: 'post',
+        body: formData
+    });
+
+    // loadProducts(login_id)
 }
