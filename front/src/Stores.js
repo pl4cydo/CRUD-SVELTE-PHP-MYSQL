@@ -66,7 +66,24 @@ export async function removeProduct(id, login_id) {
     loadProducts(login_id)
 }
 
+export function altProduct(id, modelo, ano, cor, placa, login_id) {
 
+    const formData = new FormData();
+    formData.append('id', id);
+    formData.append('modelo', modelo);
+    formData.append('ano', ano);
+    formData.append('cor', cor);
+    formData.append('placa', placa);
+    formData.append('login_id', login_id);
+    
+
+    fetch('http://localhost:8001/alterarAutomovel.php', {
+        method: 'put',
+        body: formData
+    });
+
+    loadProducts(login_id)
+}
   
 
  

@@ -1,6 +1,5 @@
 <script>
-  import { automoveis, IdAlterar } from "../Stores";
-  import { writable } from "svelte/store";
+  import { automoveis, IdAlterar, altProduct, currentUser } from "../Stores";
 
   const form = {
     modelo: "",
@@ -8,7 +7,7 @@
     cor: "",
     placa: "",
   };
-  
+
   IdAlterar.subscribe( v => {
     encontrarAutomovel()
   })
@@ -25,7 +24,7 @@
   }
 
   function handleForm() {
-    // addProduct(form.modelo, form.ano, form.cor, form.placa, $currentUser.id);
+    altProduct( $IdAlterar ,form.modelo, form.ano, form.cor, form.placa, $currentUser.id);
 
     form.modelo = "";
     form.ano = "";
