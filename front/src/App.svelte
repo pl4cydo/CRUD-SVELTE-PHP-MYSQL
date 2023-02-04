@@ -37,8 +37,8 @@
               <li on:click={() => alterarBLoco2()}>Cadastrar Automovel</li>
             {/if}
         {/if}
-        <a href="#"><li>GitHub</li></a>
-        <a href="#"><li>Linkedin</li></a>
+        <a href="https://github.com/pl4cydo" target="_blank" rel="noreferrer"><li>GitHub</li></a>
+        <a href="https://www.linkedin.com/in/pl4cydo/" target="_blank" rel="noreferrer"><li>Linkedin</li></a>
         {#if !$loginA}
             <!-- svelte-ignore a11y-click-events-have-key-events -->
             <li on:click={() => {$state = 'cadastroUsuario'}} id="cadastro">Cadastro</li>

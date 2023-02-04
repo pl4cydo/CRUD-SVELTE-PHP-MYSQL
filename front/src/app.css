@@ -128,8 +128,12 @@ aside > p{
   line-height: 20px;
   max-width: 500px;
 }
+#boxLogin{
+  margin-left: 40%;
+  margin-top: 6%;
+}
 #loginInput{
-  width: 30%;
+  width: 50%;
 }
 #loginButton{
   height: 50px;
