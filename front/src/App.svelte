@@ -16,7 +16,7 @@
   function alterarBLoco2(){
     $stateBloco.bl = 'cadastro'
     $stateBloco.hed = 'cadastro'
-    $stateBloco.but = 'cadastro'
+    $stateBloco.but = 'cadastro' 
   }
 
 
