@@ -80,6 +80,8 @@ export async function removeProduct(id, login_id) {
 
 export function altProduct(id, modelo, ano, cor, placa, login_id) {
 
+    console.log(id, modelo, ano, cor, placa, login_id)
+
     const formData = new FormData();
     formData.append('id', id);
     formData.append('modelo', modelo);
@@ -90,12 +92,18 @@ export function altProduct(id, modelo, ano, cor, placa, login_id) {
     
 
     fetch('http://localhost:8001/alterarAutomovel.php', {
-        method: 'put',
+        method: 'post',
         body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+            console.log('Alteração realizada com sucesso');
+            } else {
+            console.error('Ocorreu um erro ao realizar a alteração');
+            }
     });
-
     loadProducts(login_id)
+    
 }
-  
-
  

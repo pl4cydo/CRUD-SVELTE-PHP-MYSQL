@@ -33,4 +33,5 @@ describe automoveis;
 drop table automoveis;
 select * from automoveis;
 
+
 update automoveis set modelo = 'modelo', ano = '1ano', cor = '1cor', placa = 'placa' WHERE id = 8 AND login_id = 1;

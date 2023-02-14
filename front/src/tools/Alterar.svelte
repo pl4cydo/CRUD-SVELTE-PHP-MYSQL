@@ -2,10 +2,12 @@
   import { automoveis, IdAlterar, altProduct, currentUser } from "../Stores";
 
   const form = {
+    id: "",
     modelo: "",
     ano: "",
     cor: "",
     placa: "",
+    user: ""
   };
 
   IdAlterar.subscribe( v => {
@@ -15,16 +17,20 @@
   function encontrarAutomovel() {
     $automoveis.forEach((el) => {
       if (el.id === $IdAlterar) {
+        form.id = el.id;
         form.modelo = el.modelo;
         form.ano = el.ano;
         form.cor = el.cor;
         form.placa = el.placa;
+        form.user = $currentUser.id;
       }
     });
   }
 
   function handleForm() {
-    altProduct( $IdAlterar ,form.modelo, form.ano, form.cor, form.placa, $currentUser.id);
+    console.log( form.id ,form.modelo, form.ano, form.cor, form.placa, form.user)
+    altProduct( form.id ,form.modelo, form.ano, form.cor, form.placa, form.user);
+
 
     form.modelo = "";
     form.ano = "";
